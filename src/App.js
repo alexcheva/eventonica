@@ -50,27 +50,41 @@ function GreetUser(props) {
 }
 
 function Signup() {
-  const [username, setUsername] = React.useState(null);
-  const [fname, setFname] = React.useState(null);
-  const [lname, setLname] = React.useState(null);
-  const [email, setEmail] = React.useState(null);
-  {/* how to make this work? */ }
-  const onChange = ({ currentTarget: { value } }) => {
-    setUsername(value);
-    setFname(value);
-    setLname(value);
-    setEmail(value);
-  };
-  
-  const usernameRef = React.useRef();
-  const fnameRef = React.useRef();
-  const lnameRef = React.useRef();
-  const emailRef = React.useRef();
 
+  {/* Setup InitialState */ }
+  const initialState = {
+    username: "",
+    fname: "",
+    lname: "",
+    email: ""
+  }
+
+  function reducer(state, action) {
+    switch (action.type) {
+      case "editUsername":
+        return { ...state, username: action.value };
+      
+      case "editFname":
+        return {...state, fname: action.value };
+  
+      case "editLname":
+        return {...state, lname: action.value };
+  
+      case "editEmail":
+        return { ...state, email: action.value };
+      
+      default:
+        return state;
+    }
+  }
+
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+ 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log('USER FORM:', "Username:", usernameRef.current.value, ", First Name:", fnameRef.current.value, ", Last Name:", lnameRef.current.value, ", email:", emailRef.current.value)
+    console.log(state);
   }
+
   return (
     <section>
       <h2>Sign Up:</h2>
@@ -79,8 +93,10 @@ function Signup() {
           <label>Username:</label>
           <input type="text" id="add-username"
             name="username"
-            value={username} 
-            ref={usernameRef}
+            value={state.username} 
+            onChange={(e) => {
+              dispatch({ type: "editUsername", value: e.target.value });
+              }}
           />
         </fieldset>
         <fieldset>
@@ -88,8 +104,10 @@ function Signup() {
           <input type="text"
             id="fname"
             name="fname"
-            value={fname}
-            ref={fnameRef}
+            value={state.fname}
+            onChange={(e) => {
+              dispatch({ type: "editFname", value: e.target.value });
+              }}
             />
         </fieldset>
         <fieldset>
@@ -97,27 +115,27 @@ function Signup() {
           <input type="text"
             id="lname"
             name="lname"
-            value={lname}
-            ref={lnameRef}/>
+            value={state.lname}
+            onChange={(e) => {
+              dispatch({ type: "editLname", value: e.target.value });
+              }}/>
         </fieldset>
         <fieldset>
           <label for="email">Email:</label>
           <input type="text"
             id="email"
             name="email"
-            value={email}
-            ref={emailRef}/>
+            value={state.email}
+            onChange={(e) => {
+              dispatch({ type: "editEmail", value: e.target.value });
+              }}/>
         </fieldset>
         <input type="submit" value="Register" />
       </form>
-      {/*<ShowUser username={username} fname={fname} lname={lname} email={email}  />*/}
     </section>
   );
 }
-{/*function ShowUser(props) {
-  const { username, fname, lname, email } = props;
-  return <p>User info: username: {username}, First Name: {fname}, Last Name: {lname}, email: {email}</p>
-}*/}
+
 {/* Events */}
 function Events() {
   return (
