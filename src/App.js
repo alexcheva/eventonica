@@ -116,10 +116,7 @@ function Signup() {
     </section>
   );
 }
-{/*function ShowUser(props) {
-  const { username, fname, lname, email } = props;
-  return <p>User info: username: {username}, First Name: {fname}, Last Name: {lname}, email: {email}</p>
-}*/}
+
 {/* Events */}
 function Events() {
 
@@ -144,8 +141,6 @@ function Events() {
       <ul id="all-events">
         {events.map((event) => <li>{event.id} - <strong>{event.name}</strong> - {event.category} - <em>{event.location}</em> - {new Date(event.date).toDateString()}, {event.time}, price:  ${event.price}.</li>)
         }
-        <li>HIM - concert - UCT - 05-12-2021 - 12:00 PM - 55</li>
-        <li>POD - concert - UCT - 10-21-2021 - 18:00 PM - 55</li>
       </ul>
     </section>
   );
