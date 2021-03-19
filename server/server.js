@@ -21,17 +21,6 @@ app.get('/events', async ( req, res ) => {
     }
 })
 
-app.get('/event/:eventid', async ( req, res ) => {
-    try {
-        const event = await db.any(`SELECT * FROM events WHERE eventid = ${req.params.eventid};`, [true]);
-        res.json( event[0] );
-    }
-    catch(e) {
-        res.status(500)
-        res.render('error', { error: e })
-    }
-})
-
 app.get('/users', async ( req, res ) => {
     try {
         const users = await db.any('SELECT * FROM users;', [true]);

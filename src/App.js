@@ -122,10 +122,28 @@ function Signup() {
 }*/}
 {/* Events */}
 function Events() {
+
+  const [events, setEvents] = React.useState([]);
+
+  function getEvents() {
+    fetch('http://localhost:9000/events').then(
+      res => res.json()).then(
+        data => setEvents(data)
+      )
+  }
+  console.log(events);
+  React.useEffect(
+    () => {
+      getEvents();
+    },[]
+  )
+  //New Date(blahhhh).toDateString() //"Sun Jul 22 2018"
   return (
     <section>
       <h2>Events</h2>
       <ul id="all-events">
+        {events.map((event) => <li>{event.id} - <strong>{event.name}</strong> - {event.category} - <em>{event.location}</em> - {new Date(event.date).toDateString()}, {event.time}, price:  ${event.price}.</li>)
+        }
         <li>HIM - concert - UCT - 05-12-2021 - 12:00 PM - 55</li>
         <li>POD - concert - UCT - 10-21-2021 - 18:00 PM - 55</li>
       </ul>
