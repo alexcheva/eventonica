@@ -2,6 +2,8 @@
 //import headerImg from './header_img.jpeg'
 //import './App.css';
 import * as React from "react";
+
+import Users from './components/Users';
 {/* NAVIGATION */}
 function Nav() {
   return (
@@ -197,6 +199,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <Users />
       <SayHello />
       <Signup />
       <main>
