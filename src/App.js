@@ -3,7 +3,7 @@
 //import './App.css';
 import * as React from "react";
 
-import Users from './components/Users';
+import Login from './components/Login';
 {/* NAVIGATION */}
 function Nav() {
   return (
@@ -212,8 +212,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <Users />
-      <SayHello />
+      <Login />
       <Signup />
       <main>
         <Events />
