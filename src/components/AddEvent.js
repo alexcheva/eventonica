@@ -7,7 +7,7 @@ function AddEvent() {
       <h2>Add Event</h2>
       <form id="add-event" action="http://localhost:9000/addEvent" method="POST">
         <fieldset>
-          <label>Name:</label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text" name="name"
             id="add-event-name"
@@ -15,7 +15,7 @@ function AddEvent() {
           />
         </fieldset>
         <fieldset>
-          <label for="event-category">Category:</label>
+          <label htmlFor="event-category">Category:</label>
           <input
           type="text" name="category"
           id="event-category" 
@@ -23,7 +23,7 @@ function AddEvent() {
           />
         </fieldset>
         <fieldset>
-          <label for="event-location">Location:</label>
+          <label htmlFor="event-location">Location:</label>
           <input
           type="text" name="location"
           id="event-location" 
@@ -31,7 +31,7 @@ function AddEvent() {
           />
         </fieldset>
         <fieldset>
-          <label for="event-date">Date:</label>
+          <label htmlFor="event-date">Date:</label>
           <input
           type="text" name="date"
           id="event-date" 
@@ -39,7 +39,7 @@ function AddEvent() {
           />
         </fieldset>
         <fieldset>
-          <label for="event-time">Time:</label>
+          <label htmlFor="event-time">Time:</label>
           <input
           type="text" name="time"
           id="event-time" 
@@ -47,7 +47,7 @@ function AddEvent() {
           />
         </fieldset>
         <fieldset>
-          <label for="event-price">Price:</label>
+          <label htmlFor="event-price">Price:</label>
           <input
           type="text" name="price"
           id="event-price" 
