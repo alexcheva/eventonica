@@ -2,35 +2,12 @@
 //import headerImg from './header_img.jpeg'
 //import './App.css';
 import * as React from "react";
-//import Header from './components/Header';
+import Nav from './components/Header';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import AddEvent from './components/AddEvent';
 
-{/* NAVIGATION */}
-function Nav() {
-  return (
-    <nav>
-      <ul>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Login</a></li>
-      </ul>
-    </nav>
-  );
-}
-{/* HEADER */}
-function Header() {
-  return (
-    <header className="App-header">
-      {/* <img src={headerImg} className="jumbotron" alt="header-img" /> */}
-      <h1>
-        Eventonica 
-      </h1>
-      <p>Event Recommender</p>
-      <Nav></Nav>
-    </header>
-  );
-}
+
 function SayHello() {
   const [name, setName] = React.useState(null);
   const onChange = ({ currentTarget: { value } }) => setName(value);
@@ -88,15 +65,17 @@ function Events() {
 
 function App() {
   return (
+    <>
+    <Nav />
     <div className="container">
-      <Header />
       <Login />
       <Signup />
       <main>
         <Events />
         <AddEvent />
       </main>
-    </div>
+      </div>
+      </>
   );
 }
 

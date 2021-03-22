@@ -1,25 +1,22 @@
 {/* NAVIGATION */}
 function Nav() {
   return (
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="E.png" width="30" height="30" class="d-inline-block align-top" alt="logo image"/>
-        Eventonica
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Sign Up <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-        
-        </ul>
+    <nav class="navbar navbar-light bg-light d-flex">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+        <img id="eventonica-logo" src="E.png" class="d-inline-block align-top" alt="logo image"/>
+          <h1 id="eventonica">Eventonica</h1>
+        </a>
+        <div class="d-flex">
+          <ul class="navbar-nav mr-auto justify-content-end flex-row ">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up  </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login  </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
@@ -38,4 +35,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Nav;
