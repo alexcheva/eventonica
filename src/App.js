@@ -2,7 +2,7 @@
 //import headerImg from './header_img.jpeg'
 //import './App.css';
 import * as React from "react";
-
+//import Header from './components/Header';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import AddEvent from './components/AddEvent';
