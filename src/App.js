@@ -60,9 +60,10 @@ function Events() {
 
   function getEvents() {
     fetch('http://localhost:9000/events').then(
-      res => res.json()).then(
-        data => setEvents(data)
-      )
+      res => res.json()
+    ).then(
+      data => setEvents(data)
+    )
   }
   console.log(events);
   React.useEffect(
@@ -75,7 +76,10 @@ function Events() {
     <section>
       <h2>Events</h2>
       <ul id="all-events">
-        {events.map((event) => <li>{event.id} - <strong>{event.name}</strong> - {event.category} - <em>{event.location}</em> - {new Date(event.date).toDateString()}, {event.time}, price:  ${event.price}.</li>)
+        {events.map((event) =>
+          <li key={event.id}>
+            <strong>{event.name}</strong> - {event.category} - <em>{event.location}</em> - {new Date(event.date).toDateString()}, {event.time}, price:  ${event.price}.
+          </li>)
         }
       </ul>
     </section>

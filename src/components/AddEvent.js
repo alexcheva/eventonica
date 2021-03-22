@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 
 {/* ADD EVENT FORM */}
 function AddEvent() {
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log('You have submitted the form.')
-  }
   return (
     <section>
       <h2>Add Event</h2>
-      <form id="add-event" onSubmit={handleSubmit} >
+      <form id="add-event" action="http://localhost:9000/addEvent" method="POST">
         <fieldset>
           <label>Name:</label>
           <input
