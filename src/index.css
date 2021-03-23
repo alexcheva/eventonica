@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+img#eventonica-logo {
+  padding: 6px;
+}
+h1#eventonica {
+  display: inline;
+}
+.navbar-nav .nav-link {
+  padding-right: 10px;
+  padding-left: 10px;
+}
