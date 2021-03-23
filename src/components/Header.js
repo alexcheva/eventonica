@@ -1,7 +1,7 @@
 {/* NAVIGATION */}
 function Nav() {
   return (
-    <nav class="navbar navbar-light bg-light d-flex">
+    <nav class="navbar sticky-top navbar-light bg-light d-flex">
       <div class="container">
         <a class="navbar-brand" href="#">
         <img id="eventonica-logo" src="E.png" class="d-inline-block align-top" alt="logo image"/>
